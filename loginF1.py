@@ -48,13 +48,13 @@ user_info = {"0001": [{"name": "Sue"},
 gmail = input("Enter gmail here >>> ")
 
 while gmail.endswith("@gmail.com") and gmail == admin_info["admin1"][0] and gmail == admin_info["admin2"][0]:
-    print("[+]Email Success.") 
+    print("[+]Email Success.")
 
 while gmail != admin_info["admin1"][0] and gmail != admin_info["admin2"][0]: 
         print("[-]Type again carefully!")
         gmail = input("Enter gmail here >>> ") 
 
-"""Password Checking""" 
+"""Password Checking with while loops""" 
 password = input("Enter password here >>> ")  
 while password == admin_info["admin1"][1] and password == admin_info["admin2"][1]:
     print("[+] Suscessfully logged in to your account!") 
@@ -63,6 +63,7 @@ while password != admin_info["admin1"][1] and password != admin_info["admin2"][1
     print("[-]Type again carefully!")
     password = input("Enter password here >>> ")
 
+   #both password and email will ask again and again until admin enters correct information
 def functionOne():  
   
     print("Adding User Account")  
@@ -74,7 +75,7 @@ def new_user_info():
     new_userAge = int(input("Enter User Age >>>"))
     new_userAddr = input("Enter User Address >>>") 
     new_userPhone = int(input("Enter User Phone >>>")  )
-     
+    #setting int type to variables which must be numbers, others are string type
     #new_user_info = new_userId and new_userName and  new_userAge and new_userAddr and new_userPhone
 
     new_user_info = {"User ID": new_userId,"Name" : new_userName, "Age" : new_userAge, "Address" : new_userAddr, "Phone" :new_userPhone }
@@ -124,7 +125,7 @@ functions = { "1)" : "Add User", "2)" : "Modify User", "3)" : "Remove User"}
   
 def new_func(functions):
     for key,value in functions.items():  
-        print(f"{key} : {value}")
+        print(f"{key} : {value}") #to show what functions are available one by one in the order
 
 #first time function for Admin
 new_func(functions) 
@@ -152,15 +153,17 @@ for answer in askAdmin:
         if chooseAgain != type(chooseAgain):
             print("Enter a number - 1,2 or 3")
 
-        if chooseAgain == "1":  
+        if chooseAgain == "1":  #1 >> function one will work
             functionOne()
             new_user_info() 
-        elif chooseAgain == "2": 
+        elif chooseAgain == "2": #2 >> function two will work
             functionTwo() 
         else: 
-            functionThree()
+            functionThree() #else >> the only other left is 3 >> function three will work
 
     if  askAdmin == "N" or "n": 
-        break 
+        break    #if No,then program will take a break
     else: 
         print( "Please retype Y or N")
+      
+      """Sorry teacher - function 2 and 3 are having errors *sad noises*"""
